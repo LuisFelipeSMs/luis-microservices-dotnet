@@ -1,6 +1,7 @@
 using AutoMapper;
 using GeekShoping.ProductApi.Config;
 using GeekShoping.ProductApi.Models.Context;
+using GeekShoping.ProductApi.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +19,8 @@ builder.Services.AddDbContext<PostgreSqlContext>(options =>
 IMapper mapper = MappingConfig.RegisterMaps().CreateMapper(); 
 builder.Services.AddSingleton(mapper);
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 var app = builder.Build();
 
