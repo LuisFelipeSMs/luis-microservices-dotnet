@@ -11,8 +11,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace GeekShoping.ProductApi.Migrations
 {
     [DbContext(typeof(PostgreSqlContext))]
-    [Migration("20220518203025_AddProductDataTableDB")]
-    partial class AddProductDataTableDB
+    [Migration("20220519015928_InitialCreateDB")]
+    partial class InitialCreateDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
