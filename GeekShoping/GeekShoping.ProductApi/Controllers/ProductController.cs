@@ -32,7 +32,7 @@ namespace GeekShoping.ProductApi.Controllers
         } 
         
         [HttpPost]
-        public async Task<ActionResult<ProductVO>> Create(ProductVO vo)
+        public async Task<ActionResult<ProductVO>> Create([FromBody] ProductVO vo)
         {
             if (vo == null) return BadRequest("Erro ao salvar o usuário");
             var product = await _repository.Create(vo);
@@ -41,7 +41,7 @@ namespace GeekShoping.ProductApi.Controllers
         }
         
         [HttpPut]
-        public async Task<ActionResult<ProductVO>> Update(ProductVO vo)
+        public async Task<ActionResult<ProductVO>> Update([FromBody] ProductVO vo)
         {
             if (vo == null) return BadRequest("Erro ao atualizar o usuário");
             var product = await _repository.Update(vo);
